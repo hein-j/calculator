@@ -50,15 +50,15 @@
     grid-template-rows: 1fr 3fr;
     grid-template-columns: 3fr 2fr;
     border-style: solid;
-    border-color: hsl(0, 0%, 80%);
+    border-color: rgb(204, 204, 204);
     width: 80%;
     max-width: 70vh;
     height: 90vh;
     max-height: 90vw;
     box-sizing: border-box;
     border-radius: 30px;
-    background-color: hsl(0, 0%, 90%);
-    box-shadow: 5px 10px 15px -9px hsl(0, 0%, 20%);
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 15px -8px;
 }
 
 #screen-container {
@@ -75,6 +75,9 @@
 
 #screen {
     border-style: solid;
+    border-color: rgb(118, 125, 79);
+    background-color: rgb(166, 174, 126);
+    box-shadow: inset 10px 10px 20px -12px;
     box-sizing: border-box;
     width: 90%;
     height: 60%;
@@ -121,6 +124,13 @@
     text-align: center;
     width: 71%;
     height: 61%;
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+}
+
+.numbers-button p {
+    margin: 0;
 }
 
 #operators-container {
@@ -138,6 +148,13 @@
     height: 80%;
     width: 70%;
     text-align: center;
+    box-sizing: border-box;
+    display: grid;
+    align-items: center;
+}
+
+.operator-button p {
+    margin: 0;
 }
 
 
@@ -146,5 +163,37 @@
     grid-row-end: 4;
     grid-column-start: 2;
     height: 90%;
+    border-radius: 10%;
+}
 
+.button {
+    border-color: hsl(0, 0%, 70%);
+    border-radius: 15%;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: hsl(0, 0%, 93%);
+    box-shadow: 6px 6px 20px -12px;
+}
+
+.button:active {
+    box-shadow: inset 6px 6px 20px -12px;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+#screen:hover {
+    cursor: ew-resize;
+}
+
+#c {
+    background-color: hsl(0, 60%, 57%);
+    border-color: hsl(0, 60%, 40%);
+    color: white;
+}
+
+#equals {
+    background-color: hsl(120, 32%, 52%);
+    border-color: hsl(120, 32%, 42%);
+    color: white;
 }

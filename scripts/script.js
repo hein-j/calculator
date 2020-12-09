@@ -59,17 +59,17 @@ let numbers = document.querySelectorAll('.numbers');
 numbers.forEach(number => number.addEventListener('click', function(e) {
     // if before operator, store as a
     if (operator === '') {
-        if (failDecimal(e.target.id, a) == 'failed') {
+        if (failDecimal(this.id, a) == 'failed') {
             return;
         }
-        a = a.concat(e.target.id);
+        a = a.concat(this.id);
     }
         // if after operator, store as b
         else {
-            if (failDecimal(e.target.id, b) == 'failed') {
+            if (failDecimal(this.id, b) == 'failed') {
                 return;
             }
-            b = b.concat(e.target.id);
+            b = b.concat(this.id);
         }
     // display
     showDisplay();
@@ -86,8 +86,8 @@ operators.forEach(opbtn => opbtn.addEventListener('click', function(e) {
             display.textContent = 'Input operand first';
             return;
         }
-        operator = e.target.id;
-        operatorSymbol = e.target.dataset.symbol;
+        operator = this.id;
+        operatorSymbol = this.dataset.symbol;
         showDisplay();
     }
     // if another operator already on screen, operate on the values already stored.
@@ -103,8 +103,8 @@ operators.forEach(opbtn => opbtn.addEventListener('click', function(e) {
             let temp = operate(operator, a, b)
             // store new value as a. store current operator as operator.
             a = temp.toString();
-            operator = e.target.id;
-            operatorSymbol = e.target.dataset.symbol;
+            operator = this.id;
+            operatorSymbol = this.dataset.symbol;
             b = '';
             showDisplay();
         }
@@ -112,7 +112,7 @@ operators.forEach(opbtn => opbtn.addEventListener('click', function(e) {
 
 // when person punches in equals sign
 let equals = document.querySelector('#equals');
-equals.addEventListener('click', function() {
+equals.addEventListener('click', function(e) {
     if (a === '' || b === '' || operator === '') {
         clear();
         display.textContent = '2 operands and 1 operator required'
@@ -134,9 +134,3 @@ equals.addEventListener('click', function() {
 // when person pushes clear button
 let clearbtn = document.querySelector('#c');
 clearbtn.addEventListener('click', clear);
-
-// when person pushes . button: checks
-/* let dot = document.querySelector("#dot");
-dot.addEventListener('click', function() {
-    if (a.includes('.')
-}); */
