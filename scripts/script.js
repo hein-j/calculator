@@ -1,3 +1,8 @@
+function updateScroll(){
+    let screen = document.querySelector("#screen-text-container");
+    screen.scrollLeft = screen.scrollWidth;
+}
+
 function add(a, b) {
     return parseFloat(a) + parseFloat(b);
 }
@@ -28,7 +33,9 @@ function clear() {
 }
 
 function showDisplay() {
-    return display.textContent = a.concat(operatorSymbol, b);
+    display.textContent = a.concat(operatorSymbol, b);
+    updateScroll();
+    return;
 }
 
 function failDivide() {
